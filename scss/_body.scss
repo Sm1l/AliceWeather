@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Disney Park";
+  font-style: normal;
+  font-weight: regular;
+  src: local("Disney Park"), url("/fonts/DisneyPark.woff2") format("woff2"),
+    url("/fonts/DisneyPark.woff") format("woff");
+}
+
+body {
+  font-family: "Disney Park";
+  font-size: 28px;
+  line-height: 150%;
+  color: rgb(61, 44, 11);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода для Алисы</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <h1 class="header__title">AliceWeather</h1>
+          <div class="header__text">
+            <p>Добро пожаловать в "AliceWeather" или "Погода для Алисы"!</p>
+            <p>
+              Мы узнаем какая сегодня погода на улице и как лучше одеваться =)
+            </p>
+          </div>
+        </div>
+      </header>
+      <main class="page">
+        <div class="main__container">
+          <section class="weather">
+            <div class="weather__container">
+              <h2 class="weather__title">
+                Ну-ка посмотрим, какая сегодня погодка...
+              </h2>
+              <div class="weather__block"></div>
+            </div>
+          </section>
+          <section class="wear">
+            <div class="wear__container">
+              <h2 class="wear__title">
+                И подумаем, что бы такого сегодня надеть...
+              </h2>
+              <div class="wear__info">
+                <div class="wear__temp">
+                  <!-- Что ж, на улице достаточно прохладно, меньше 15 градусов.
+                    Стоит достаточно тепло одеться, обязательно надеваем шапку.
+                    Отлично подойдут джинсы с колготками, бадлон, не забываем
+                    под падлон надеть маечку! Поверх теплую курточку: бомбер или
+                    пуховички из Юникло. На ноги сапоги или тимбы! -->
+                </div>
+                <div class="wear__rain"></div>
+                <div class="wear__wind"></div>
+              </div>
+              <div class="wear__image"></div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__container"></div>
+      </footer>
+    </div>
+    <script src="js/weather.js"></script>
+    <script src="js/wear.js"></script>
+  </body>
+</html>

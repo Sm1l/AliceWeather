@@ -1,0 +1,26 @@
+.wear {
+  &__container {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 600px;
+    text-align: center;
+    background-image: linear-gradient(
+      90deg,
+      rgb(245, 237, 190),
+      rgb(249, 200, 200),
+      rgb(179, 227, 253)
+    );
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  &__title {
+    padding: 20px 0;
+  }
+
+  &__text {
+  }
+
+  &__image {
+  }
+}
