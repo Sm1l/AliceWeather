@@ -1,5 +1,5 @@
-import { renderWeather, loadWeather, getWeather } from "./weather.js";
-import { getWear } from "./wear.js";
+import { renderWeather, loadWeather, getWeather } from "./weather.ts";
+import { getWear } from "./wear.ts";
 
 // (async function () {
 //   const data = await loadWeather();

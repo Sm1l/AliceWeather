@@ -1,10 +1,22 @@
 const weatherBlock = document.querySelector(".weather__block");
 
-export async function loadWeather(e) {
-  weatherBlock.innerHTML = `
-  <div class="weather__loading">
-  <img src="images/gif/Xuw0.gif" alt="Загрузка" />
-</div>`;
+export interface Data {
+    location: any;
+    temp: number;
+    feelsLike: number;
+    weatherStatus: any;
+    weatherIcon: any;
+    wind: any;
+}
+
+export async function loadWeather(e?): Promise<Data | undefined> {
+  if (weatherBlock != null) {
+    weatherBlock.innerHTML = `
+    <div class="weather__loading">
+    <img src="images/gif/Xuw0.gif" alt="Загрузка" />
+  </div>`;
+  }
+ 
 
   const server =
     "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Moscow&lang=ru&appid=e2e9bbafa027ecadd7d96a8ed7faef14";
@@ -14,6 +26,7 @@ export async function loadWeather(e) {
   if (response.ok) {
     // getWeather(responseResult);
     // return responseResult;
+    
 
     return {
       location: responseResult.name,
