@@ -7,7 +7,7 @@ export async function loadWeather(e) {
 </div>`;
 
   const server =
-    "http://api.openweathermap.org/data/2.5/weather?units=metric&q=Moscow&lang=ru&appid=e2e9bbafa027ecadd7d96a8ed7faef14";
+    "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Moscow&lang=ru&appid=e2e9bbafa027ecadd7d96a8ed7faef14";
   const response = await fetch(server, { method: "GET" });
   const responseResult = await response.json();
 
