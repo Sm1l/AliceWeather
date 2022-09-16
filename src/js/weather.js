@@ -1,6 +1,6 @@
 const weatherBlock = document.querySelector(".weather__block");
 
-async function loadWeather(e) {
+export async function loadWeather(e) {
   weatherBlock.innerHTML = `
   <div class="weather__loading">
   <img src="images/gif/Xuw0.gif" alt="Загрузка" />
@@ -12,21 +12,28 @@ async function loadWeather(e) {
   const responseResult = await response.json();
 
   if (response.ok) {
-    getWeather(responseResult);
+    // getWeather(responseResult);
+    // return responseResult;
+
+    return {
+      location: responseResult.name,
+      temp: Math.round(responseResult.main.temp),
+      feelsLike: Math.round(responseResult.main.feels_like),
+      weatherStatus: responseResult.weather[0].description,
+      weatherIcon: responseResult.weather[0].icon,
+      wind: responseResult.wind.speed,
+    };
   } else {
     weatherBlock.innerHTML = responseResult.message;
   }
 }
 
-function getWeather(data) {
-  // console.log(data);
+export function getWeather(data) {
+  const weatherBlock = document.querySelector(".weather__block");
 
-  const location = data.name;
-  const temp = Math.round(data.main.temp);
-  const feelsLike = Math.round(data.main.feels_like);
-  const weatherStatus = data.weather[0].description;
-  const weatherIcon = data.weather[0].icon;
-  const wind = data.wind.speed;
+  console.log(data);
+
+  const { location, temp, feelsLike, weatherStatus, weatherIcon, wind } = data;
 
   // HTML шаблон
   const template = `
@@ -47,6 +54,8 @@ function getWeather(data) {
   weatherBlock.innerHTML = template;
 }
 
-if (weatherBlock) {
-  loadWeather();
+export function renderWeather() {
+  if (weatherBlock) {
+    loadWeather();
+  }
 }

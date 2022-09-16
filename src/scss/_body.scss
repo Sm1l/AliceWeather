@@ -2,8 +2,8 @@
   font-family: "Disney Park";
   font-style: normal;
   font-weight: regular;
-  src: local("Disney Park"), url("/fonts/DisneyPark.woff2") format("woff2"),
-    url("/fonts/DisneyPark.woff") format("woff");
+  src: local("Disney Park"), url("../fonts/DisneyPark.woff2") format("woff2"),
+    url("../fonts/DisneyPark.woff") format("woff");
 }
 
 body {

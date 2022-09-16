@@ -1,15 +1,27 @@
 let wearTemp = document.querySelector(".wear__temp");
 // const wind = document.querySelector(".weather__wind");
 // const rain = document.querySelector(".weather__status");
+let weatherTemp = document.querySelector(".weather__real");
 
-if (weatherBlock) {
+if (weatherTemp) {
   function tempDetection() {
-    let temp = document.querySelector(".weather__real");
-    console.log(temp);
+    console.log(weatherTemp);
   }
+  tempDetection();
+} else {
+  console.log("not work");
 }
-tempDetection();
 
+export function getWear(data) {
+  console.log(data);
+  const { location, temp, feelsLike, weatherStatus, weatherIcon, wind } = data;
+
+  wearTemp.innerText = `Что ж, на улице ${weatherStatus}, меньше ${temp}  градусов.
+       Стоит достаточно тепло одеться, обязательно надеваем шапку.
+       Отлично подойдут джинсы с колготками, бадлон, не забываем под падлон надеть маечку!
+       Поверх теплую курточку: бомбер или пуховички из Юникло. На ноги сапоги или тимбы!
+       `;
+}
 // function tempDetection() {
 //   if (getWeather) {
 //     let temp = document.querySelector(".weather__real");
@@ -32,5 +44,5 @@ tempDetection();
 //       Поверх теплую курточку: бомбер или пуховички из Юникло. На ноги сапоги или тимбы!
 //       `;
 //   }
-//   // break;
+// break;
 // }

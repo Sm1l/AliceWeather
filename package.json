@@ -1,0 +1,25 @@
+{
+  "name": "aliceweather",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rm -rf docs && parcel --dist-dir=docs",
+    "build": "rm -rf docs && parcel build --public-url='/AliceWeather/' --dist-dir=docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sm1l/AliceWeather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sm1l/AliceWeather/issues"
+  },
+  "homepage": "https://github.com/Sm1l/AliceWeather#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "2.7.0"
+  }
+}
