@@ -33,6 +33,7 @@
   &__city {
     font-size: 48px;
   }
+
   &__info {
     display: flex;
     flex-direction: column;
@@ -74,3 +75,44 @@
     padding: 10px 0;
   }
 }
+
+// @media (max-width: 550px) {
+//   .weather {
+//     &__container {
+//     }
+
+//     &__title {
+//     }
+
+//     &__block {
+//       flex-direction: column;
+//     }
+
+//     &__city {
+//     }
+
+//     &__info {
+//     }
+
+//     &__icon {
+//     }
+
+//     &__status {
+//     }
+
+//     &__temp {
+//     }
+
+//     &__real {
+//     }
+
+//     &__feels-like {
+//     }
+
+//     &__wind {
+//     }
+
+//     &__loading {
+//     }
+//   }
+// }

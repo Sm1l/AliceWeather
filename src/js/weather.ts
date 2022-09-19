@@ -1,22 +1,24 @@
+import catGif from "../images/gif/Xuw0.gif";
+
 const weatherBlock = document.querySelector(".weather__block");
 
 export interface Data {
-    location: any;
-    temp: number;
-    feelsLike: number;
-    weatherStatus: any;
-    weatherIcon: any;
-    wind: any;
+  location: any;
+  temp: number;
+  feelsLike: number;
+  weatherStatus: any;
+  weatherIcon: any;
+  wind: number;
+  main: any;
 }
 
-export async function loadWeather(e?): Promise<Data | undefined> {
+export async function loadWeather(): Promise<Data | undefined> {
   if (weatherBlock != null) {
     weatherBlock.innerHTML = `
     <div class="weather__loading">
-    <img src="images/gif/Xuw0.gif" alt="Загрузка" />
+    <img src="${catGif}" alt="Загрузка" />
   </div>`;
   }
- 
 
   const server =
     "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Moscow&lang=ru&appid=e2e9bbafa027ecadd7d96a8ed7faef14";
@@ -26,7 +28,7 @@ export async function loadWeather(e?): Promise<Data | undefined> {
   if (response.ok) {
     // getWeather(responseResult);
     // return responseResult;
-    
+    // console.log(responseResult);
 
     return {
       location: responseResult.name,
@@ -35,9 +37,12 @@ export async function loadWeather(e?): Promise<Data | undefined> {
       weatherStatus: responseResult.weather[0].description,
       weatherIcon: responseResult.weather[0].icon,
       wind: responseResult.wind.speed,
+      main: responseResult.weather[0].main,
     };
   } else {
-    weatherBlock.innerHTML = responseResult.message;
+    if (weatherBlock != null) {
+      weatherBlock.innerHTML = responseResult.message;
+    }
   }
 }
 
@@ -63,8 +68,9 @@ export function getWeather(data) {
     <div class="weather__wind">Ветер: ${wind} м/с</div>
   </div>
   `;
-
-  weatherBlock.innerHTML = template;
+  if (weatherBlock != null) {
+    weatherBlock.innerHTML = template;
+  }
 }
 
 export function renderWeather() {
