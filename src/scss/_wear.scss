@@ -33,3 +33,15 @@
   &__image {
   }
 }
+
+@media (max-width: 550px) {
+  .wear {
+    &__container {
+      padding: 15px;
+    }
+    &__title {
+      font-size: 28px;
+      padding: 5px 0 20px;
+    }
+  }
+}
