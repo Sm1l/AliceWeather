@@ -1,4 +1,5 @@
 `use strict`;
+
 const now = new Date();
 const year = now.getFullYear();
 const month = getMonthNow(now);
@@ -40,6 +41,7 @@ function getDayNow() {
 
 function renderDate() {
   const date = document.querySelector(".date__text");
-  date.innerHTML = `Этот прекрасный мир ждет тебя! <br> Сегодня отличный день =), <br> ${dateNumber} ${month} ${year} г., ${day}, <br> точное время ${hour} ч. ${minute} мин.`;
+  if (date !== null) {
+    date.innerHTML = `Этот прекрасный мир ждет тебя! <br> Сегодня отличный день =), <br> ${dateNumber} ${month} ${year} г., ${day}, <br> точное время ${hour} ч. ${minute} мин.`;
+  }
 }
-renderDate();

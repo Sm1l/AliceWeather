@@ -1,5 +1,6 @@
 import { renderWeather, loadWeather, getWeather } from "./weather.ts";
 import { getWear } from "./wear.ts";
+import { renderDate } from "./date.ts";
 
 // (async function () {
 //   const data = await loadWeather();
@@ -11,3 +12,4 @@ loadWeather().then((data) => {
   getWeather(data);
   getWear(data);
 });
+renderDate();
