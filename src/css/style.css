@@ -1,0 +1,225 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+.input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  color: black;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+._ibg {
+  position: relative;
+}
+._ibg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@font-face {
+  font-family: "Disney Park";
+  font-style: normal;
+  font-weight: regular;
+  src: local("Disney Park"), url("../fonts/DisneyPark.woff2") format("woff2"), url("../fonts/DisneyPark.woff") format("woff");
+}
+body {
+  font-family: "Disney Park";
+  font-size: 28px;
+  line-height: 150%;
+  color: rgb(61, 44, 11);
+}
+
+@media (max-width: 550px) {
+  body {
+    font-size: 24px;
+    line-height: 130%;
+  }
+}
+.wrapper {
+  padding: 20px;
+  background-image: linear-gradient(180deg, rgb(245, 197, 190), rgb(255, 223, 190), rgb(253, 241, 179), rgb(201, 253, 179), rgb(179, 250, 253), rgb(179, 200, 253), rgb(228, 179, 253));
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header__title {
+  display: block;
+  font-size: 60px;
+  padding: 30px 0;
+}
+.header__text {
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .header__title {
+    padding: 15px 0;
+  }
+}
+.weather {
+  padding: 40px 0;
+}
+.weather__container {
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 600px;
+  text-align: center;
+  background-image: linear-gradient(90deg, rgb(245, 237, 190), rgb(249, 200, 200), rgb(179, 227, 253));
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.weather__title {
+  padding: 20px 0;
+}
+.weather__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.weather__city {
+  font-size: 48px;
+}
+.weather__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  gap: 10px;
+}
+.weather__status {
+  font-size: 24px;
+}
+.weather__temp {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-size: 24px;
+  gap: 10px;
+}
+.weather__real {
+  font-size: 48px;
+}
+.weather__loading {
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+@media (max-width: 550px) {
+  .weather__container {
+    padding: 15px;
+  }
+  .weather__title {
+    font-size: 32px;
+    padding: 5px 0 20px;
+  }
+  .weather__block {
+    flex-direction: column;
+  }
+  .weather__city {
+    font-size: 36px;
+  }
+  .weather__info {
+    gap: 0;
+  }
+}
+.wear__container {
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 600px;
+  text-align: center;
+  background-image: linear-gradient(90deg, rgb(245, 237, 190), rgb(249, 200, 200), rgb(179, 227, 253));
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.wear__title {
+  padding: 20px 0;
+}
+@media (max-width: 550px) {
+  .wear__container {
+    padding: 15px;
+  }
+  .wear__title {
+    font-size: 32px;
+    padding: 5px 0 20px;
+  }
+}

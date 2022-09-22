@@ -60,23 +60,20 @@ export function getWear(data: Data) {
   function renderWind() {
     const wearWind = document.querySelector(".wear__wind");
     const baseWind = {
+      // above0: `Ветер слабый, ${wind} м/с.`,
       above0: `Ветер слабый, ${wind} м/с.`,
-      above3: `Ветер средний, ${wind} м/с.`,
-      above6: `Достаточно сильный ветер, ${wind} м/с. Стоит задуматься о каком-нибудь головном уборе и шарфике!`,
-      above9: `Очень сильный ветер, ${wind} м/с! Лучше конечно не выходить из дома, но если все-таки этого не избежать, то нужно очень хорошо закутаться!`,
+      above4: `Ветер умеренный, ${wind} м/с. Стоит задуматься о каком-нибудь головном уборе и шарфике!`,
+      above7: `Сильный ветер, ${wind} м/с! Лучше конечно не выходить из дома, но если все-таки этого не избежать, то нужно очень хорошо закутаться!`,
     };
     if (wearWind != null) {
-      if (wind <= 3) {
+      if (wind > 7) {
+        wearWind.textContent = baseWind.above7;
+      }
+      if (wind > 4) {
+        wearWind.textContent = baseWind.above4;
+      }
+      if (wind > 0) {
         wearWind.textContent = baseWind.above0;
-      }
-      if (wind <= 6) {
-        wearWind.textContent = baseWind.above3;
-      }
-      if (wind <= 9) {
-        wearWind.textContent = baseWind.above6;
-      }
-      if (wind > 9) {
-        wearWind.textContent = baseWind.above9;
       }
     }
   }
