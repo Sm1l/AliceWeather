@@ -7,23 +7,21 @@ export function getWear(data: Data) {
   function renderTemp() {
     const wearTemp = document.querySelector(".wear__temp");
     const baseTemp = {
-      above30: `На улице настоящая жаришка! ${weatherStatus}, ${temp}° градусов.`,
-      above25: `25`,
-      above20: `На улице ${weatherStatus}, достаточно тепло, ${temp}° градусов.`,
-      above15: `На улице `,
+      above30: `На улице настоящая жаришка, температура ${temp}° градусов, ${weatherStatus}!`,
+      above25: `На улице прям тепло, температура ${temp}° градусов, ${weatherStatus}.  Одеваемся легко.`,
+      above20: `На улице ${weatherStatus}, тепло, температура ${temp}° градусов.`,
+      above15: `На улице комфортная температура, ${temp}° градусов, ${weatherStatus}. Можно надеть бадлон и джинсики/брючки/штанишки. Сверху кожаную курточку, либо джинсовку. На ноги кроссовки или легкие`,
       above10: `Что ж, на улице ${weatherStatus}, температура ${temp}° градусов.
-    Стоит достаточно тепло одеться, обязательно надеваем шапку.
-    Отлично подойдут джинсы с колготками, бадлон, не забываем под падлон надеть маечку!
-    Поверх теплую курточку: бомбер или пуховички из Юникло. На ноги сапоги или тимбы!
-    `,
-      above5: `За окном прохладно, ${weatherStatus}, температура ${temp}° градусов.`,
-      above0: `0`,
-      aboveMinus5: `-5`,
-      aboveMinus10: `-10`,
-      aboveMinus15: `-15`,
-      aboveMinus20: `-20`,
-      aboveMinus25: `-25`,
-      belowminus25: `-30`,
+      Стоит достаточно тепло одеться, обязательно надевай шапку.
+      Отлично подойдут джинсы с колготками, бадлон, не забывай под бадлон надеть маечку!
+      Поверх теплую курточку: бомбер или пальто. На ноги сапоги или тимбы!`,
+      above5: `За окном прохладно, ${weatherStatus}, температура ${temp}° градусов. Одевайся тепло: джинсы/кожаные штанишки, обязательно колготки! Бадлон или свитер, обязательно поддень маечку. На голову надень шапочку и, возможно, уже стоит задуматься о перчатках. Поверх пальто, пуховик из Юникло или бомбер. На ноги сапоги или тимбы.`,
+      above0: `Температура немного выше нуля, за окном ${temp}° градусов, ${weatherStatus}. Одеваемся тепло.`,
+      aboveMinus5: `За окном немного ниже нуля, температура ${temp}° градусов, ${weatherStatus}.`,
+      aboveMinus10: `На улице уверенный минус, температура ${temp}° градусов, ${weatherStatus}.`,
+      aboveMinus15: `За окном хороший минус, температура ${temp}° градусов, ${weatherStatus}.`,
+      aboveMinus20: `-За окном настоящая зима, температура ${temp}° градусов, ${weatherStatus}.`,
+      belowMinus20: `Нет, ну ты видела, что творится? Температура за окном ${temp}° градусов. Самое лучшее, что можно и нужно сделать - это горячий чай, а после чая забраться в Лисий офис и никуда оттуда не вылезать =) ! Но если все-таки придется выходить из дома, то одевайся ооочень тепло! Штанишки с двумя колготами, много-много кофточек под свитер! На голову надевай самую теплую шапку, повязывай теплый шарф! Сверху теплый пуховик из Рокси или шубу! На ноги Угги или Джог-Доги!`,
     };
     if (wearTemp != null) {
       if (temp >= 30) {
@@ -48,10 +46,8 @@ export function getWear(data: Data) {
         wearTemp.textContent = baseTemp.aboveMinus15;
       } else if (temp >= -20) {
         wearTemp.textContent = baseTemp.aboveMinus20;
-      } else if (temp >= -25) {
-        wearTemp.textContent = baseTemp.aboveMinus25;
-      } else if (temp < -25) {
-        wearTemp.textContent = baseTemp.belowminus25;
+      } else if (temp > -20) {
+        wearTemp.textContent = baseTemp.belowMinus20;
       }
     }
   }
@@ -60,7 +56,6 @@ export function getWear(data: Data) {
   function renderWind() {
     const wearWind = document.querySelector(".wear__wind");
     const baseWind = {
-      // above0: `Ветер слабый, ${wind} м/с.`,
       above0: `Ветер слабый, ${wind} м/с.`,
       above4: `Ветер умеренный, ${wind} м/с. Стоит задуматься о каком-нибудь головном уборе и шарфике!`,
       above7: `Сильный ветер, ${wind} м/с! Лучше конечно не выходить из дома, но если все-таки этого не избежать, то нужно очень хорошо закутаться!`,
@@ -68,11 +63,9 @@ export function getWear(data: Data) {
     if (wearWind != null) {
       if (wind > 7) {
         wearWind.textContent = baseWind.above7;
-      }
-      if (wind > 4) {
+      } else if (wind > 4) {
         wearWind.textContent = baseWind.above4;
-      }
-      if (wind > 0) {
+      } else if (wind > 0) {
         wearWind.textContent = baseWind.above0;
       }
     }
@@ -83,10 +76,10 @@ export function getWear(data: Data) {
     const wearStatus = document.querySelector(".wear__status");
     const baseStatus = {
       sunshine: `За окном светит солнышко, ${weatherStatus}! Какой сегодня прекрасный день =)`,
-      cloudy: `На улице ${weatherStatus}. Нужно подумать: брать ли с собой зонт..`,
+      cloudy: `На улице ${weatherStatus}. Возможно сегодня понадобится зонт!`,
       mist: `На улице ${weatherStatus}.`,
       rain: `На улице ${weatherStatus}! Обязательно берем зонт!`,
-      snow: `На улице ${weatherStatus}!`,
+      snow: `На улице ${weatherStatus}! Если мокрый, то обязательно берем зонтик!`,
     };
     if (wearStatus != null) {
       if (main == "Clear") {

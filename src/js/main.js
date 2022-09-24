@@ -12,4 +12,5 @@ loadWeather().then((data) => {
   getWeather(data);
   getWear(data);
 });
+import { renderDate } from "./date.ts";
 renderDate();

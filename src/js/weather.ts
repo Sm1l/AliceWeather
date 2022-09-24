@@ -36,7 +36,7 @@ export async function loadWeather(): Promise<Data | undefined> {
       feelsLike: Math.round(responseResult.main.feels_like),
       weatherStatus: responseResult.weather[0].description,
       weatherIcon: responseResult.weather[0].icon,
-      wind: responseResult.wind.speed,
+      wind: parseFloat(responseResult.wind.speed.toFixed(1)),
       main: responseResult.weather[0].main,
     };
   } else {
