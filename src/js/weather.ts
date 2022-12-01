@@ -26,10 +26,6 @@ export async function loadWeather(): Promise<Data | undefined> {
   const responseResult = await response.json();
 
   if (response.ok) {
-    // getWeather(responseResult);
-    // return responseResult;
-    // console.log(responseResult);
-
     return {
       location: responseResult.name,
       temp: Math.round(responseResult.main.temp),
