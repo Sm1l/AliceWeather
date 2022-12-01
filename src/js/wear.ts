@@ -75,19 +75,19 @@ export function getWear(data: Data) {
       sunshine: `За окном светит солнышко, ${weatherStatus}! Какой сегодня прекрасный день =)`,
       cloudy: `На улице ${weatherStatus}. Возможно сегодня понадобится зонт!`,
       mist: `На улице ${weatherStatus}.`,
-      rain: `На улице ${weatherStatus}! Обязательно берем зонт!`,
-      snow: `На улице ${weatherStatus}! Если мокрый, то обязательно берем зонтик!`,
+      rain: `На улице ${weatherStatus}! Обязательно берем зонтик!`,
+      snow: `На улице ${weatherStatus}! Обязательно берем зонтик!`,
     };
     if (wearStatus != null) {
       if (main == "Clear") {
         wearStatus.textContent = baseStatus.sunshine;
-      } else if (main == "Clouds") {
+      } else if (main == "Clouds" && temp >= -3) {
         wearStatus.textContent = baseStatus.cloudy;
-      } else if (main == "Thunderstorm" || "Rain" || "Drizzle") {
+      } else if ((main == "Thunderstorm" || "Rain" || "Drizzle") && temp >= -3) {
         wearStatus.textContent = baseStatus.rain;
-      } else if (main == "Mist" || "Smoke" || "Haze" || "Fog") {
+      } else if ((main == "Mist" || "Smoke" || "Haze" || "Fog") && temp >= -3) {
         wearStatus.textContent = baseStatus.mist;
-      } else if (main == "Snow") {
+      } else if (main == "Snow" && temp >= -3) {
         wearStatus.textContent = baseStatus.snow;
       }
     }
