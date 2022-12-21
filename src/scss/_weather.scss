@@ -1,6 +1,4 @@
 .weather {
-  padding: 40px 0 0;
-
   &__title {
   }
 
@@ -58,7 +56,6 @@
 
 @media (max-width: 550px) {
   .weather {
-    padding: 20px 0 0;
     &__container {
     }
 

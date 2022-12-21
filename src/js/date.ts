@@ -4,7 +4,7 @@ const month = getMonthNow(now);
 const dateNumber = now.getDate();
 const day = getDayNow(now);
 const hour = now.getHours();
-const minute = now.getMinutes();
+export const minute = now.getMinutes();
 
 function getMonthNow() {
   const months = [
@@ -25,15 +25,7 @@ function getMonthNow() {
 }
 
 function getDayNow() {
-  const days = [
-    `воскресение`,
-    `понедельник`,
-    `вторник`,
-    `среда`,
-    `четверг`,
-    `пятница`,
-    `суббота`,
-  ];
+  const days = [`воскресение`, `понедельник`, `вторник`, `среда`, `четверг`, `пятница`, `суббота`];
   return days[now.getDay()];
 }
 
